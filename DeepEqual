@@ -1,0 +1,32 @@
+function deepEqual (value1, value2) {
+	if (typeof value1 !== "object" && typeof value2 !== "object") {
+		return value1 === value2;
+	}
+	if (typeof value1 !== "object" || typeof value2 !== "object") {
+		return false;
+	}
+	if (value1 === null || value2 === null ) {
+		return value1 === value2;
+	}
+	function objectLength (obj) {
+		var keys = Object.keys(obj);
+     	var length = keys.length;
+		return length;
+	}
+	if (objectLength(value1) !== objectLength(value2)) {
+		return false;
+	}
+	for (var property in value1) {
+		if (!deepEqual(value1[property], value2[property])) {
+			return false;
+		}
+	}
+	return true;
+}
+var obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true
