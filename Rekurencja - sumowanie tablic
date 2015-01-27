@@ -1,0 +1,10 @@
+function sum(arr) {
+  if (arr.length===1) {
+  	return arr[0];
+  }
+  var last = arr[arr.length-1];
+  arr.pop();
+  return last+sum(arr);     
+}
+var array = [1,2,3,4,5];
+console.log(sum(array));
