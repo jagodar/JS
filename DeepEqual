@@ -8,16 +8,12 @@ function deepEqual (value1, value2) {
 	if (value1 === null || value2 === null ) {
 		return value1 === value2;
 	}
-	function objectLength (obj) {
-		var keys = Object.keys(obj);
-     	var length = keys.length;
-		return length;
-	}
-	if (objectLength(value1) !== objectLength(value2)) {
+	if (Object.keys(value1).length !== Object.keys(value2).length) {
 		return false;
 	}
-	for (var property in value1) {
-		if (!deepEqual(value1[property], value2[property])) {
+	var keys = Object.keys(value1);
+	for (var i = 0; i<keys.length; i++ ) {
+		if (!deepEqual(value1[keys[i]], value2[keys[i]])) {
 			return false;
 		}
 	}
