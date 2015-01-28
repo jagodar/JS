@@ -1,0 +1,26 @@
+function mergesort(array) {
+  if(array.length<2) {
+  return array;
+  }
+  var mid = Math.floor(array.length/2);
+  var leftSlice  = array.slice(0,mid);
+  var rightSlice = array.slice(mid);
+  var left = mergesort(leftSlice);
+  var right = mergesort(rightSlice);
+  return merge(left, right);
+}
+function merge(left, right) {
+  var ileft = 0;
+  var iright = 0;
+  var tab = [];
+  while (ileft<left.length && iright<right.length) {
+    if (left[ileft]<right[iright]) {
+    	tab.push(left[ileft]);
+      	ileft++;
+    }
+    	tab.push(right[iright]);
+    	iright++;
+  }
+  return tab.concat(left.slice(ileft)).concat(right.slice(iright));
+}
+console.log(mergesort([1,4,6,2,1,5]));
