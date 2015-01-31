@@ -1,0 +1,19 @@
+function average(array) {
+  function plus(a, b) { return a + b; }
+  return array.reduce(plus) / array.length;
+}
+var centaury = {};
+ancestry.forEach (function (person) {
+	var cent = Math.ceil(person.died / 100);
+	if (centaury[cent.valueOf()] !== undefined) {
+		centaury[cent.valueOf()].push(person.died-person.born);
+	}
+	if(centaury[cent.valueOf()] === undefined) {
+      centaury[cent.valueOf()] = [person.died-person.born];
+    }
+})
+ave = [];
+for (prop in centaury) {
+  ave.push(average(centaury[prop]));
+}
+console.log(ave);
