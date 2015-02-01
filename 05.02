@@ -1,11 +1,11 @@
 function average(array) {
-  function plus(a, b) { return a + b; }
-  return array.reduce(plus) / array.length;
+  	function plus(a, b) { return a + b; }
+ 	return array.reduce(plus) / array.length;
 }
  
 var byName = {};
 ancestry.forEach(function(person) {
-  byName[person.name] = person;
+ 	byName[person.name] = person;
 });
 
 var mothers = ancestry.filter(function (person) {
@@ -28,8 +28,7 @@ var children = ancestry.filter(function(person) {
 
 difference = [];
 mothers.forEach(function (year, index) {
-	difference.push(children[index]-year)
-})
+	difference.push(children[index] - year)
+});
  
-
 console.log(average(difference));
