@@ -29,7 +29,7 @@ var children = ancestry.filter(function(person) {
 difference = [];
 mothers.forEach(function (year, index) {
 	difference.push(children[index]-year)
-});
+})
  
 
 console.log(average(difference));
