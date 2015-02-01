@@ -4,7 +4,7 @@ function average(array) {
 }
  
 var byName = {};
-ancestry.forEach(function(person) {
+ancestry.forEach(function ancestryForEach (person) {
  	byName[person.name] = person;
 });
 
@@ -18,7 +18,7 @@ var mothers = ancestry.filter(function (person) {
 	return person.born;
 });
 
-var children = ancestry.filter(function(person) {
+var children = ancestry.filter(function (person) {
 	return person.mother !== null ;
 }).filter(function (person) { 
 	return byName[person.mother]; 
@@ -27,7 +27,7 @@ var children = ancestry.filter(function(person) {
 });
 
 difference = [];
-mothers.forEach(function (year, index) {
+mothers.forEach(function mothersForEach (year, index) {
 	difference.push(children[index] - year)
 });
  
