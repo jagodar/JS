@@ -8,30 +8,28 @@ ancestry.forEach(function(person) {
   byName[person.name] = person;
 });
 
-var withMother = ancestry.filter(function(person) {
-return person.mother !== null ;
+var mothers = ancestry.filter(function (person) {
+	return person.mother !== null;
+}).filter(function (person) { 
+	return byName[person.mother];
+}).map(function (person) { 
+	return byName[person.mother];
+}).map(function (person) {
+	return person.born;
 });
 
-var haveMotherInAncestry = withMother.filter(function (person) { 
-return byName[person.mother] });
+var children = ancestry.filter(function(person) {
+	return person.mother !== null ;
+}).filter(function (person) { 
+	return byName[person.mother]; 
+}).map(function (person) { 
+	return person.born; 
+});
 
-var mothers = haveMotherInAncestry.map(function (person) { 
-return byName[person.mother] })
-
-var mothersBorn = mothers.map(function (person) {
-return person.born;})
-
-var childBorn = haveMotherInAncestry.map(function (person) { 
-return person.born; });
-
-function forEach (mother, child) {
-  var diff = [];
-  for (var i = 0; i<mother.length; i++) {
-  	diff.push(child[i]-mother[i]);
-  }
-  return diff;
+difference = [];
+mothers.forEach(function (year, index) {
+	difference.push(children[index]-year)
+});
  
-}
-var difference = forEach(mothersBorn, childBorn);
- 
+
 console.log(average(difference));
