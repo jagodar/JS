@@ -1,6 +1,15 @@
-var arrays = [[1, 2, 3], [4, 5], [6]];
-function flattening (array) {
-  var result = array.reduce(function(a, b) {return a.concat(b)})
-  return result;
+var array = [[1, [2], 3], [4, 5], [6]];
+
+var result = [];
+
+function flattening (array) {  
+	if (array.length === undefined) {
+		result.push(array);
+	}
+	for (var i = 0; i<array.length; i++) {
+    	flattening(array[i]);
+    }
+	return result;
 }
-console.log(flattening (arrays));
+
+console.log(flattening(array));
