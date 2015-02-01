@@ -8,21 +8,21 @@ ancestry.forEach(function ancestryForEach (person) {
  	byName[person.name] = person;
 });
 
-var mothers = ancestry.filter(function (person) {
+var mothers = ancestry.filter(function mothersAncestryFilter (person) {
 	return person.mother !== null;
-}).filter(function (person) { 
+}).filter(function mothersAancestryFilterFilter (person) { 
 	return byName[person.mother];
-}).map(function (person) { 
+}).map(function mothersAncestryFilterFilterMap (person) { 
 	return byName[person.mother];
-}).map(function (person) {
+}).map(function mothersAncestryFilterFilterMapMap (person) {
 	return person.born;
 });
 
-var children = ancestry.filter(function (person) {
+var children = ancestry.filter(function childrenAncestryFilter (person) {
 	return person.mother !== null ;
-}).filter(function (person) { 
+}).filter(function childrenAncestryFilterFilter (person) { 
 	return byName[person.mother]; 
-}).map(function (person) { 
+}).map(function childrenAncestryFilterFilterMap (person) { 
 	return person.born; 
 });
 
