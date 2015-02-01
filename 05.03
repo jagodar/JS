@@ -1,19 +1,22 @@
-function average(array) {
-  function plus(a, b) { return a + b; }
-  return array.reduce(plus) / array.length;
+function average (array) {
+ 	function plus(a, b) { return a + b; }
+ 	return array.reduce(plus) / array.length;
 }
-var centaury = {};
-ancestry.forEach (function (person) {
+
+var century = {};
+ancestry.forEach (function ancestryForEach (person) {
 	var cent = Math.ceil(person.died / 100);
-	if (centaury[cent.valueOf()] !== undefined) {
-		centaury[cent.valueOf()].push(person.died-person.born);
+	if (century[cent] !== undefined) {
+		century[cent].push(person.died - person.born);
 	}
-	if(centaury[cent.valueOf()] === undefined) {
-      centaury[cent.valueOf()] = [person.died-person.born];
+	if (century[cent] === undefined) {
+     	century[cent] = [person.died - person.born];
     }
-})
-ave = [];
-for (prop in centaury) {
-  ave.push(average(centaury[prop]));
+});
+
+var ave = [];
+Object.keys(century).forEach (function centuryForEach (key) {
+	ave.push(average(century[key]);
 }
+
 console.log(ave);
