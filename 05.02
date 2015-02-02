@@ -19,7 +19,7 @@ var mothers = ancestry.filter(function mothersAncestryFilter(person) {
 });
 
 var children = ancestry.filter(function childrenAncestryFilter(person) {
-	return person.mother !== null ;
+	return person.mother !== null;
 }).filter(function(person) { 
 	return byName[person.mother]; 
 }).map(function(person) { 
