@@ -1,4 +1,4 @@
-function every (array, test) {
+function every(array, test) {
 	for (var i = 0; i < array.length; i++) {
 		if (!test(array[i])) {
 			return false;
@@ -6,7 +6,7 @@ function every (array, test) {
 	}
 	return true;
 }
-function some (array, test) {
+function some(array, test) {
 	for (var i = 0; i < array.length; i++) {
 		if (test(array[i])) {
 			return true;
