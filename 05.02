@@ -10,19 +10,19 @@ ancestry.forEach(function ancestryForEach(person) {
 
 var mothers = ancestry.filter(function mothersAncestryFilter(person) {
 	return person.mother !== null;
-}).filter(function mothersAancestryFilterFilter(person) { 
+}).filter(function(person) { 
 	return byName[person.mother];
-}).map(function mothersAncestryFilterFilterMap(person) { 
+}).map(function(person) { 
 	return byName[person.mother];
-}).map(function mothersAncestryFilterFilterMapMap(person) {
+}).map(function(person) {
 	return person.born;
 });
 
 var children = ancestry.filter(function childrenAncestryFilter(person) {
 	return person.mother !== null ;
-}).filter(function childrenAncestryFilterFilter(person) { 
+}).filter(function(person) { 
 	return byName[person.mother]; 
-}).map(function childrenAncestryFilterFilterMap(person) { 
+}).map(function(person) { 
 	return person.born; 
 });
 
