@@ -4,7 +4,7 @@ function average (array) {
 }
 
 var century = {};
-ancestry.forEach(function ancestryForEach (person) {
+ancestry.forEach(function ancestryForEach(person) {
 	var cent = Math.ceil(person.died / 100);
 	if (century[cent] === undefined) {
 		centaury[cent] = [];
@@ -13,7 +13,7 @@ ancestry.forEach(function ancestryForEach (person) {
 });
 
 var ave = [];
-Object.keys(century).forEach(function centuryForEach (key) {
+Object.keys(century).forEach(function centuryForEach(key) {
 	ave.push(average(century[key]);
 };
 
