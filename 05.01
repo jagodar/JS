@@ -4,10 +4,10 @@ var result = [];
 
 function flattening (array) {  
 	if (array.length === undefined) {
-		result.push(array);
+		result.push (array);
 	}
-	for (var i = 0; i<array.length; i++) {
-    		flattening(array[i]);
+	for (var i = 0; i < array.length; i++) {
+    		flattening (array[i]);
     }
 	return result;
 }
