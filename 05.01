@@ -8,7 +8,7 @@ function flattening (array) {
 	}
 	for (var i = 0; i < array.length; i++) {
     		flattening (array[i]);
-    }
+    	}
 	return result;
 }
 
