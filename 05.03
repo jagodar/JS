@@ -15,7 +15,7 @@ ancestry.forEach(function ancestryForEach (person) {
 var ave = [];
 Object.keys(century).forEach(function centuryForEach (key) {
 	ave.push(average(century[key]);
-}
+};
 
 console.log(ave);
 
