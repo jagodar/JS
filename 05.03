@@ -9,7 +9,7 @@ ancestry.forEach(function ancestryForEach (person) {
 	if (century[cent] === undefined) {
 		centaury[cent] = [];
 	}
-	centaury[cent].push(person.died - person.born);
+	century[cent].push(person.died - person.born);
 });
 
 var ave = [];
