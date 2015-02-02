@@ -4,30 +4,30 @@ function average(array) {
 }
  
 var byName = {};
-ancestry.forEach(function ancestryForEach (person) {
+ancestry.forEach(function ancestryForEach(person) {
  	byName[person.name] = person;
 });
 
-var mothers = ancestry.filter(function mothersAncestryFilter (person) {
+var mothers = ancestry.filter(function mothersAncestryFilter(person) {
 	return person.mother !== null;
-}).filter(function mothersAancestryFilterFilter (person) { 
+}).filter(function mothersAancestryFilterFilter(person) { 
 	return byName[person.mother];
-}).map(function mothersAncestryFilterFilterMap (person) { 
+}).map(function mothersAncestryFilterFilterMap(person) { 
 	return byName[person.mother];
-}).map(function mothersAncestryFilterFilterMapMap (person) {
+}).map(function mothersAncestryFilterFilterMapMap(person) {
 	return person.born;
 });
 
-var children = ancestry.filter(function childrenAncestryFilter (person) {
+var children = ancestry.filter(function childrenAncestryFilter(person) {
 	return person.mother !== null ;
-}).filter(function childrenAncestryFilterFilter (person) { 
+}).filter(function childrenAncestryFilterFilter(person) { 
 	return byName[person.mother]; 
-}).map(function childrenAncestryFilterFilterMap (person) { 
+}).map(function childrenAncestryFilterFilterMap(person) { 
 	return person.born; 
 });
 
 difference = [];
-mothers.forEach(function mothersForEach (year, index) {
+mothers.forEach(function mothersForEach(year, index) {
 	difference.push(children[index] - year)
 });
  
