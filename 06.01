@@ -1,17 +1,17 @@
-function Vector (x, y) {
+function Vector(x, y) {
 	this.x = x;
 	this.y = y;
 }
 
-Vector.prototype.plus = function plus (vect) {
-	return new Vector (this.x + vect.x, this.y + vect.y);
+Vector.prototype.plus = function plus(vect) {
+	return new Vector(this.x + vect.x, this.y + vect.y);
 };
 
-Vector.prototype.minus = function minus (vect) {
-	return new Vector (this.x - vect.x, this.y - vect.y);
+Vector.prototype.minus = function minus(vect) {
+	return new Vector(this.x - vect.x, this.y - vect.y);
 };
 
-Object.defineProperty (Vector.prototype, length, {
+Object.defineProperty(Vector.prototype, length, {
 	get: function length () {
 		return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
 	}
