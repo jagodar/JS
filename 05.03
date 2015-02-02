@@ -7,7 +7,7 @@ var century = {};
 ancestry.forEach(function ancestryForEach(person) {
 	var cent = Math.ceil(person.died / 100);
 	if (century[cent] === undefined) {
-		centaury[cent] = [];
+		century[cent] = [];
 	}
 	century[cent].push(person.died - person.born);
 });
