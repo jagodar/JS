@@ -4,19 +4,18 @@ function average (array) {
 }
 
 var century = {};
-ancestry.forEach (function ancestryForEach (person) {
+ancestry.forEach(function ancestryForEach (person) {
 	var cent = Math.ceil(person.died / 100);
-	if (century[cent] !== undefined) {
-		century[cent].push(person.died - person.born);
-	}
 	if (century[cent] === undefined) {
-     	century[cent] = [person.died - person.born];
-    }
+		centaury[cent] = [];
+	}
+	centaury[cent].push(person.died - person.born);
 });
 
 var ave = [];
-Object.keys(century).forEach (function centuryForEach (key) {
+Object.keys(century).forEach(function centuryForEach (key) {
 	ave.push(average(century[key]);
 }
 
 console.log(ave);
+
