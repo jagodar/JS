@@ -1,0 +1,48 @@
+function logFive(object) {
+	var length = object.leng < 5 ? object.leng : 5;
+	for (var i = 0; i < length; i++) {
+		console.log(object.current);
+		object.toNext();
+	}
+}
+
+
+function ArraySeq(array) {
+	this.position = 0;
+	this.current = array[this.position];
+  	this.arr = array;
+}
+
+ArraySeq.prototype.toNext = function toNext() {
+	this.position++;
+	this.current = this.arr[this.position];
+};
+
+ArraySeq.prototype.leng = function leng() {
+	return object.arr.length;
+};
+
+
+function RangeSeq(min, max) {
+	this.current = min;
+	this.max = max;
+}
+
+RangeSeq.prototype.toNext = function toNext() {
+	if (this.current < this.max) {
+		this.current++;
+	}
+};
+
+RangeSeq.prototype.leng = function leng() {
+	var length = 0;
+	var curr = this.current;
+	while (curr < this.max) {
+		curr++;
+		length++;
+	}
+	return length;
+};
+
+logFive(new ArraySeq([1, 2, 3]));
+logFive(new RangeSeq(100, 1000));
