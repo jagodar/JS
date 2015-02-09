@@ -11,15 +11,12 @@ function ArraySeq(array) {
 	this.position = 0;
 	this.current = array[this.position];
   	this.arr = array;
+  	this.leng = array.length;
 }
 
 ArraySeq.prototype.toNext = function toNext() {
 	this.position++;
 	this.current = this.arr[this.position];
-};
-
-ArraySeq.prototype.leng = function leng() {
-	return object.arr.length;
 };
 
 
