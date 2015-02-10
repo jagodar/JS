@@ -1,5 +1,5 @@
 function logFive(object) {
-	var length = object.leng < 5 ? object.leng : 5;
+	var length = (object.length < 5) ? object.length : 5;
 	for (var i = 0; i < length; i++) {
 		console.log(object.current);
 		object.toNext();
@@ -9,13 +9,13 @@ function logFive(object) {
 function ArraySeq(array) {
 	this.position = 0;
 	this.current = array[this.position];
-  	this.arr = array;
-  	this.leng = array.length;
+  	this.array = array;
+  	this.length = array.length;
 }
 
 ArraySeq.prototype.toNext = function toNext() {
 	this.position++;
-	this.current = this.arr[this.position];
+	this.current = this.array[this.position];
 };
 
 
@@ -30,13 +30,8 @@ RangeSeq.prototype.toNext = function toNext() {
 	}
 };
 
-RangeSeq.prototype.leng = function leng() {
-	var length = 0;
-	var curr = this.current;
-	while (curr < this.max) {
-		curr++;
-		length++;
-	}
+RangeSeq.prototype.length = function length() {
+	var length = this.max - this.current;
 	return length;
 };
 
