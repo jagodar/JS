@@ -18,7 +18,7 @@ Tiger.prototype.act = function tigerAct(context) {
 	}	
 
 	return {type: "move", direction: this.direction};
-}
+};
 
 function SmartPlantEater() {
 	this.energy = 20;
@@ -40,7 +40,7 @@ SmartPlantEater.prototype.act = function eaterAct(context) {
 	}
 
 	return {type: "move", direction: this.direction};
-}
+};
 
 animateWorld(new LifelikeWorld(
   ["####################################################",
