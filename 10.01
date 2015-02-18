@@ -1,0 +1,17 @@
+var month = function month() {
+	var names = ["January", "February", "March", "April", "May",
+				"June", "Juli", "August", "September", "October",
+				"November", "December"];
+	return {
+		name: function name(number) {
+			return names[number]; 
+		},
+		number: function number(name) { 
+			return names.indexOf(name); 
+		}
+	};  
+}();
+console.log(month.name(2));
+// → March
+console.log(month.number("November"));
+// → 10
