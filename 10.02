@@ -266,11 +266,9 @@ var ecosystemModule = (function() {
     if (critter) {
       return {type: "eat", direction: critter};
     }
-
     if (context.look(this.direction) != " ") {
       this.direction = context.find(" ") || "s";
     } 
-
     return {type: "move", direction: this.direction};
   };
 
@@ -288,11 +286,9 @@ var ecosystemModule = (function() {
     if (plant.length > 1) {
       return {type: "eat", direction: randomElement(plant)};
     }
-
     if (context.look(this.direction) != " ") {
       this.direction = context.find(" ") || "s";  
     }
-
     return {type: "move", direction: this.direction};
   };
 
