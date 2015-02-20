@@ -281,7 +281,6 @@ var ecosystemModule = (function() {
     if (this.energy > 40 && space) {
       return {type: "reproduce", direction: space};
     }
-
     var plant = context.findAll("*");
     if (plant.length > 1) {
       return {type: "eat", direction: randomElement(plant)};
